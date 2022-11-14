@@ -30,13 +30,7 @@ class ProductsService {
   }
 
   async find() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(this.products);
-      }, 1000);
-    });
-
-
+    return this.products;
   }
 
   async findOne(id) {
@@ -69,7 +63,7 @@ class ProductsService {
       throw boom.notFound('Product not found');
     }
     this.products.splice(index, 1);
-    return this.products[index];
+    return { id };
   }
 }
 
