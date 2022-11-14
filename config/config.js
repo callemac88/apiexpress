@@ -10,4 +10,6 @@ const config = {
   dbPort: process.env.DB_PORT,
 }
 
+console.log('process.env.DB_PORT: ', process.env.DB_PORT)
+
 module.exports = { config };
