@@ -48,6 +48,10 @@ class Customer extends Model {
   static associate(models) {
     // associate
     this.belongsTo(models.User, {as: 'user'});
+    this.hasMany(models.Order, {
+      as: 'orders',
+      foreignKey: 'customerId'
+    });
   }
 
   static config(sequelize) {
@@ -59,6 +63,5 @@ class Customer extends Model {
     }
   }
 }
-
 
 module.exports = { CUSTOMER_TABLE, CustomerSchema, Customer }
